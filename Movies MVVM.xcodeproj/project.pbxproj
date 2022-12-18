@@ -18,6 +18,7 @@
 		1867F880294F21CA00032BF0 /* MainViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867F87F294F21CA00032BF0 /* MainViewController+TableView.swift */; };
 		1867F882294F2D8100032BF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867F881294F2D8100032BF0 /* Constants.swift */; };
 		1867F884294F2E8400032BF0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867F883294F2E8400032BF0 /* MainViewModel.swift */; };
+		1867F889294F3AEE00032BF0 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867F888294F3AEE00032BF0 /* NetworkConstant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1867F87F294F21CA00032BF0 /* MainViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableView.swift"; sourceTree = "<group>"; };
 		1867F881294F2D8100032BF0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1867F883294F2E8400032BF0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1867F888294F3AEE00032BF0 /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,8 +179,17 @@
 		1867F87E294F0A6400032BF0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1867F887294F3AD400032BF0 /* Network */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		1867F887294F3AD400032BF0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1867F888294F3AEE00032BF0 /* NetworkConstant.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +327,7 @@
 				1867F845294E4AD300032BF0 /* AppDelegate.swift in Sources */,
 				1867F880294F21CA00032BF0 /* MainViewController+TableView.swift in Sources */,
 				1867F877294EFF4E00032BF0 /* MainViewController.swift in Sources */,
+				1867F889294F3AEE00032BF0 /* NetworkConstant.swift in Sources */,
 				1867F882294F2D8100032BF0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
