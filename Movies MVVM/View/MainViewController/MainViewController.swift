@@ -9,8 +9,22 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    // IBOutlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    // ViewModel
+    var viewModel: MainViewModel = MainViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configView()
+    }
+    
+    // Configuring MainViewController (View)
+    func configView() {
+        self.title = Constants.appName
+        
+        setupTableView()
     }
 }
