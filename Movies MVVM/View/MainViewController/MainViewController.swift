@@ -17,8 +17,11 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.getTrendingMovies()
     }
     
     // Configuring MainViewController (View)

@@ -7,8 +7,8 @@
 
 import Foundation
 
-class NetworkConstant {
-    public static var shared: NetworkConstant = NetworkConstant()
+class NetworkConstants {
+    public static var shared: NetworkConstants = NetworkConstants()
     
     private init() {
         // Singletone
