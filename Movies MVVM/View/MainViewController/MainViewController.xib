@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Movies_MVVM" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="xeB-2s-SzE" id="1sy-lY-TX6"/>
                 <outlet property="tableView" destination="hZU-nt-5yl" id="XL6-RW-LFO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,6 +24,9 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xeB-2s-SzE">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -30,6 +34,8 @@
                 <constraint firstItem="hZU-nt-5yl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="A9Q-2K-Nr3"/>
                 <constraint firstAttribute="bottom" secondItem="hZU-nt-5yl" secondAttribute="bottom" id="D7p-bC-nYk"/>
                 <constraint firstItem="hZU-nt-5yl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Zkm-0N-leJ"/>
+                <constraint firstItem="xeB-2s-SzE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mE2-2q-GCK"/>
+                <constraint firstItem="xeB-2s-SzE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tyh-ho-M1Q"/>
                 <constraint firstItem="hZU-nt-5yl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yQt-TS-XLt"/>
             </constraints>
             <point key="canvasLocation" x="-25.190839694656489" y="19.718309859154932"/>

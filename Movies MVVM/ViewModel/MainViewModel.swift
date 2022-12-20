@@ -9,22 +9,48 @@ import Foundation
 
 class MainViewModel {
     
+    // Observables
+    var isLoading: Observable<Bool> = Observable(false)
+    var cellDataSource: Observable<[Movie]> = Observable(nil)
+    
+    // Model
+    var dataSource: TrendingMoviesModel?
+    
+    
+    // Func
     func numberOfSections() -> Int {
-        return 1
+        1
     }
     
     func numberOfRows(in section: Int) -> Int {
-        return 3
+        self.dataSource?.results.count ?? 0
     }
     
     func getTrendingMovies() {
-        NetworkManager.getTrendingMovies { movieResult in
+        if isLoading.value ?? true {
+            return
+        }
+        isLoading.value = true
+        
+        NetworkManager.getTrendingMovies { [weak self] movieResult in
+            self?.isLoading.value = false
+            
             switch movieResult {
             case.success(let movieData):
                 print("Top trending counts: \(movieData.results.count)")
+                self?.dataSource = movieData
+                self?.getCellData()
             case.failure(let error):
                 print(error)
             }
         }
+    }
+    
+    func getCellData() {
+        self.cellDataSource.value = self.dataSource?.results ?? []
+    }
+    
+    func getMovieTitle(_ movie: Movie) -> String {
+        return movie.title ?? movie.name ?? ""
     }
 }
