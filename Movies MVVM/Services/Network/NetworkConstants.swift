@@ -26,7 +26,7 @@ class NetworkConstants {
         }
     }
     
-    public var moviePosterPath: String {
+    public var posterBaseUrl: String {
         get {
             return "https://image.tmdb.org/t/p/w500/"
         }

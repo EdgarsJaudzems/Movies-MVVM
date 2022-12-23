@@ -15,12 +15,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        registerCells()
+        registerCell()
     }
     
     // TableView Cell
-    func registerCells() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.singleMovieTableViewCell)
+    func registerCell() {
+        tableView.register(MainMovieCell.register(), forCellReuseIdentifier: MainMovieCell.identifier)
     }
     
     func reloadTableView() {
@@ -39,9 +39,17 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.singleMovieTableViewCell, for: indexPath)
-        let movieData = cellDataSource[indexPath.row]
-        cell.textLabel?.text = self.viewModel.getMovieTitle(movieData)
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainMovieCell.identifier, for: indexPath) as? MainMovieCell else {
+            return UITableViewCell()
+        }
+        
+        let cellViewModel = cellDataSource[indexPath.row]
+        cell.setupCellData(viewModel: cellViewModel)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
 }

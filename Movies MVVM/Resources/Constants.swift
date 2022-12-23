@@ -10,8 +10,4 @@ import Foundation
 struct Constants {
     // Main
     static let appName = "Movies MVVM"
-    
-    
-    // Cell
-    static let singleMovieTableViewCell = "singleMovieTableViewCell"
 }

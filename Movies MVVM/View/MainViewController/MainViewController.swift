@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     var viewModel: MainViewModel = MainViewModel()
     
     // DataSource
-    var cellDataSource: [Movie] = []
+    var cellDataSource: [MovieCellViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
