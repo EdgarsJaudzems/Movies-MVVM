@@ -28,10 +28,10 @@ public class NetworkManager {
             if error == nil,
                let data = dataResponse,
                let movieData = try? JSONDecoder().decode(TrendingMoviesModel.self, from: data) {
-                print("Data \(movieData.results.count)")
+                print("Data: \(movieData.results.count)")
                 completionHandler(.success(movieData))
             } else {
-                print("Error \(error.debugDescription)")
+                print("Error: \(error.debugDescription)")
                 completionHandler(.failure(.errorParsingData))
                 
             }
