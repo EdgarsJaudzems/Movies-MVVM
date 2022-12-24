@@ -29,8 +29,8 @@ class MainMovieCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        movieBackgroundLayer.addRoundCorners(radius: 5)
-        movieBackgroundLayer.addBorder(color: .label, width: 0.5)
+//        movieBackgroundLayer.addRoundCorners(radius: 5)
+//        movieBackgroundLayer.addBorder(color: .label, width: 0.5)
         
         moviePoster.addRoundCorners(radius: 5)
     }

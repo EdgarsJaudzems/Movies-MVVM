@@ -9,12 +9,14 @@ import Foundation
 
 class MovieCellViewModel {
     
+    var id: Int
     var title: String
     var year: String
     var rating: String
     var posterUrl: URL?
     
     init(movie: Movie) {
+        self.id = movie.id
         self.title = movie.title ?? movie.name ?? ""
         self.year = movie.releaseDate ?? movie.firstAirDate ?? ""
         self.rating = "\(movie.voteAverage)"
