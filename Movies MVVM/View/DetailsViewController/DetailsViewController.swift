@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DetailsViewController: UIViewController {
 
@@ -37,6 +38,6 @@ class DetailsViewController: UIViewController {
         
         movieTitle.text = viewModel.title
         movieDescription.text = viewModel.description
-        movieBackdrop.load(url: viewModel.backdropUrl!)
+        movieBackdrop.sd_setImage(with: viewModel.backdropUrl)
     }
 }

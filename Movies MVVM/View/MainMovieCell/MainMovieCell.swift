@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MainMovieCell: UITableViewCell {
     
@@ -28,10 +29,7 @@ class MainMovieCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        movieBackgroundLayer.addRoundCorners(radius: 5)
-//        movieBackgroundLayer.addBorder(color: .label, width: 0.5)
-        
+
         moviePoster.addRoundCorners(radius: 5)
     }
     
@@ -39,6 +37,6 @@ class MainMovieCell: UITableViewCell {
         self.movieTitle.text = viewModel.title
         self.movieReleaseYear.text = viewModel.year
         self.movieRating.text = viewModel.rating
-        self.moviePoster.load(url: viewModel.posterUrl!)
+        self.moviePoster.sd_setImage(with: viewModel.posterUrl)
     }
 }
