@@ -38,6 +38,7 @@ class DetailsViewController: UIViewController {
         
         movieTitle.text = viewModel.title
         movieDescription.text = viewModel.description
+        movieBackdrop.sd_imageIndicator = SDWebImageActivityIndicator.gray
         movieBackdrop.sd_setImage(with: viewModel.backdropUrl)
     }
 }

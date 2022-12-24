@@ -19,7 +19,7 @@ class MovieCellViewModel {
         self.id = movie.id
         self.title = movie.title ?? movie.name ?? ""
         self.year = movie.releaseDate ?? movie.firstAirDate ?? ""
-        self.rating = "\(movie.voteAverage)"
+        self.rating = "\(movie.voteAverage.formatRating())"
         self.posterUrl = getPosterUrlFromString(movie.posterPath)
     }
     

@@ -30,13 +30,13 @@ class MainMovieCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        moviePoster.addRoundCorners(radius: 5)
     }
     
     func setupCellData(viewModel: MovieCellViewModel) {
         self.movieTitle.text = viewModel.title
         self.movieReleaseYear.text = viewModel.year
         self.movieRating.text = viewModel.rating
+        self.moviePoster.sd_imageIndicator = SDWebImageActivityIndicator.gray
         self.moviePoster.sd_setImage(with: viewModel.posterUrl)
     }
 }
