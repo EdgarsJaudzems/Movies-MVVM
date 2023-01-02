@@ -24,7 +24,7 @@ struct Movie: Codable {
     let backdropPath: String
     let id: Int
     let title: String?
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String?
     let originalTitle: String?
     let overview, posterPath: String
     let mediaType: MediaType

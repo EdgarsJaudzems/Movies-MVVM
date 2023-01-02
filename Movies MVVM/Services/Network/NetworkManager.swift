@@ -12,11 +12,16 @@ enum NetworkError: Error {
     case errorParsingData
 }
 
-public class NetworkManager {
+protocol NetworkManagerProtocol {
+    func getTrendingMovies(urlString: String, completionHandler: @escaping (_ movieResult: Result<TrendingMoviesModel,NetworkError>) -> Void)
+}
+
+public class NetworkManager: NetworkManagerProtocol {
+    static let shared = NetworkManager()
     
-    static func getTrendingMovies(completionHandler: @escaping (_ movieResult: Result<TrendingMoviesModel,NetworkError>) -> Void) {
-        
-        let urlString = "\(NetworkConstants.shared.baseUrl)trending/all/day?api_key=\(NetworkConstants.shared.apiKey)"
+    let urlString = "\(NetworkConstants.shared.baseUrl)trending/all/day?api_key=\(NetworkConstants.shared.apiKey)"
+    
+    func getTrendingMovies(urlString: String, completionHandler: @escaping (_ movieResult: Result<TrendingMoviesModel,NetworkError>) -> Void) {
         
         guard let url = URL(string: urlString) else {
             completionHandler(Result.failure(.urlError))
@@ -28,10 +33,10 @@ public class NetworkManager {
             if error == nil,
                let data = dataResponse,
                let movieData = try? JSONDecoder().decode(TrendingMoviesModel.self, from: data) {
-                print("Data: \(movieData.results.count)")
+                print("ℹ️ Network Manager: \(movieData.results.count)")
                 completionHandler(.success(movieData))
             } else {
-                print("Error: \(error.debugDescription)")
+                print("❌ Error: \(error.debugDescription)")
                 completionHandler(.failure(.errorParsingData))
                 
             }

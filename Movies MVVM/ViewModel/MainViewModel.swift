@@ -16,6 +16,12 @@ class MainViewModel {
     // Model
     var dataSource: TrendingMoviesModel?
     
+    // Protocol
+    var networkManager: NetworkManagerProtocol!
+    
+    init(networkManager: NetworkManagerProtocol = NetworkManager()) {
+        self.networkManager = networkManager
+    }
     
     // Func
     func numberOfSections() -> Int {
@@ -32,18 +38,18 @@ class MainViewModel {
         }
         isLoading.value = true
         
-        NetworkManager.getTrendingMovies { [weak self] movieResult in
+        self.networkManager.getTrendingMovies(urlString: NetworkManager.shared.urlString, completionHandler: { [weak self] movieResult in
             self?.isLoading.value = false
             
             switch movieResult {
             case.success(let movieData):
-                print("Top trending counts: \(movieData.results.count)")
+                print("ℹ️ MainViewModel: \(movieData.results.count)")
                 self?.dataSource = movieData
                 self?.getCellData()
             case.failure(let error):
-                print(error)
+                print("❌ Error: \(error)")
             }
-        }
+        })
     }
     
     func getCellData() {

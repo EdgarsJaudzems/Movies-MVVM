@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // ViewModel
-    var viewModel: MainViewModel = MainViewModel()
+    var viewModel: MainViewModel = MainViewModel(networkManager: NetworkManager())
     
     // DataSource
     var cellDataSource: [MovieCellViewModel] = []
