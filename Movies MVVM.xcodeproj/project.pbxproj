@@ -29,6 +29,7 @@
 		18C67D13295EC92500A6BF3B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 18C67D12295EC92500A6BF3B /* SDWebImage */; };
 		18C67D68295EFD3000A6BF3B /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67D67295EFD3000A6BF3B /* MockNetworkManager.swift */; };
 		18C67D6C295F26F800A6BF3B /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C67D6B295F26F800A6BF3B /* MainViewModelTests.swift */; };
+		18D2FCDD2962C61900597E94 /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2FCDC2962C61900597E94 /* DetailsViewModelTests.swift */; };
 		18E6593E2956469400B1F35C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6593C2956469400B1F35C /* DetailsViewController.swift */; };
 		18E6593F2956469400B1F35C /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E6593D2956469400B1F35C /* DetailsViewController.xib */; };
 		18E659412956495500B1F35C /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E659402956495500B1F35C /* DetailsViewModel.swift */; };
@@ -79,6 +80,7 @@
 		18BA542D29605A1D003172ED /* SwiftUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUtility.swift; sourceTree = "<group>"; };
 		18C67D67295EFD3000A6BF3B /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		18C67D6B295F26F800A6BF3B /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		18D2FCDC2962C61900597E94 /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
 		18E6593C2956469400B1F35C /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		18E6593D2956469400B1F35C /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		18E659402956495500B1F35C /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				18C67D6B295F26F800A6BF3B /* MainViewModelTests.swift */,
+				18D2FCDC2962C61900597E94 /* DetailsViewModelTests.swift */,
 				18C67D67295EFD3000A6BF3B /* MockNetworkManager.swift */,
 				18BA542B296057DC003172ED /* movies.json */,
 			);
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D2FCDD2962C61900597E94 /* DetailsViewModelTests.swift in Sources */,
 				18C67D6C295F26F800A6BF3B /* MainViewModelTests.swift in Sources */,
 				18C67D68295EFD3000A6BF3B /* MockNetworkManager.swift in Sources */,
 			);

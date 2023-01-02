@@ -10,9 +10,10 @@ import Foundation
 enum NetworkError: Error {
     case urlError
     case errorParsingData
+    case custom(string: String)
 }
 
-protocol NetworkManagerProtocol {
+protocol NetworkManagerProtocol: AnyObject {
     func getTrendingMovies(urlString: String, completionHandler: @escaping (_ movieResult: Result<TrendingMoviesModel,NetworkError>) -> Void)
 }
 
