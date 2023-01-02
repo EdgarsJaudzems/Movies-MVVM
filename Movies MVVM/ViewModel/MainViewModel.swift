@@ -13,14 +13,11 @@ class MainViewModel {
     var isLoading: Observable<Bool> = Observable(false)
     var cellDataSource: Observable<[MovieCellViewModel]> = Observable(nil)
     
-    // Error
-    var onErrorHandling : ((NetworkError?) -> Void)?
-    
     // Model
     var dataSource: TrendingMoviesModel?
     
     // Protocol
-    weak var networkManager: NetworkManagerProtocol?
+    var networkManager: NetworkManagerProtocol!
     
     init(networkManager: NetworkManagerProtocol = NetworkManager()) {
         self.networkManager = networkManager
@@ -41,12 +38,7 @@ class MainViewModel {
         }
         isLoading.value = true
         
-        guard let networkManager = networkManager else {
-            onErrorHandling?(NetworkError.custom(string: "Missing service"))
-            return
-        }
-        
-        networkManager.getTrendingMovies(urlString: NetworkManager.shared.urlString, completionHandler: { [weak self] movieResult in
+        self.networkManager.getTrendingMovies(urlString: NetworkManager.shared.urlString, completionHandler: { [weak self] movieResult in
             self?.isLoading.value = false
             
             switch movieResult {

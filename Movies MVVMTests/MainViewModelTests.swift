@@ -35,16 +35,6 @@ final class MainViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 2)
     }
     
-    func testGetTrendingMoviesWithNoService() {
-        mainViewModel.networkManager = nil
-        let expectation = XCTestExpectation(description: "Expected no service for fetching")
-        
-        mainViewModel.getTrendingMovies()
-        expectation.fulfill()
-        XCTAssertEqual(mainViewModel.cellDataSource.value?.count, nil)
-        wait(for: [expectation], timeout: 2)
-    }
-    
     func testFirstMovieTitle() {
         let movieTitle = "Glass Onion: A Knives Out Mystery"
         let expectation = XCTestExpectation(description: "Expected correct movie title")

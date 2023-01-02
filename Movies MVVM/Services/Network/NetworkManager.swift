@@ -10,7 +10,6 @@ import Foundation
 enum NetworkError: Error {
     case urlError
     case errorParsingData
-    case custom(string: String)
 }
 
 protocol NetworkManagerProtocol: AnyObject {
